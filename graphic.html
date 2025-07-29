@@ -1,0 +1,1211 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design Services | ProServe Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Color Variables */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --white: #ffffff;
+            --gray-light: #f5f7fa;
+            --gray-medium: #bdc3c7;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--gray-light);
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background: #c0392b;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        /* Hero Section */
+        .design-hero {
+            height: 70vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), 
+                        url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .design-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .design-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .design-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Services Section */
+        .design-services {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .service-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .service-type {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-type:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-type h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .service-type ul {
+            margin: 15px 0 20px;
+            padding-left: 20px;
+        }
+        
+        .service-type li {
+            margin-bottom: 8px;
+            list-style-type: disc;
+            color: var(--primary);
+        }
+        
+        /* Design Tools Section */
+        .design-tools {
+            padding: 80px 0;
+            background: var(--gray-light);
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .tool-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .adobe { color: #FF0000; }
+        .illustrator { color: #FF9A00; }
+        .photoshop { color: #31A8FF; }
+        .indesign { color: #FF3366; }
+        .figma { color: #A259FF; }
+        
+        /* Process Section */
+        .design-process {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            padding: 30px;
+            background: var(--light);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: scale(1.05);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+        
+        /* Benefits Section */
+        .why-choose {
+            padding: 80px 0;
+            background: var(--gray-light);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            display: flex;
+            gap: 20px;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .benefit-card:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+        
+        .benefit-card:hover .benefit-icon {
+            color: var(--white);
+        }
+        
+        .benefit-icon {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-top: 5px;
+            flex-shrink: 0;
+            transition: color 0.3s ease;
+        }
+        
+        /* Portfolio Showcase */
+        .portfolio-showcase {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(44, 62, 80, 0.9);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .pricing-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--secondary);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            width: 120px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin: 20px 0;
+            font-weight: 700;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: var(--dark);
+            font-weight: normal;
+        }
+        
+        .pricing-features {
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--success);
+            margin-right: 10px;
+        }
+        
+        /* CTA Section */
+        .design-cta {
+            padding: 80px 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .design-cta::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .design-cta::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .design-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .design-cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 0 20px;
+            position: relative;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+            margin-top: 10px;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--gray-medium);
+            transition: color 0.3s;
+            display: inline-block;
+            padding: 3px 0;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-medium);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .design-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background: var(--white);
+                flex-direction: column;
+                padding: 30px;
+                transition: all 0.3s ease;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0 0 20px 0;
+            }
+            
+            nav ul li a {
+                font-size: 1.1rem;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .design-hero {
+                height: 60vh;
+            }
+            
+            .design-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .process-step {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .design-hero {
+                height: 70vh;
+                padding-top: 70px;
+            }
+            
+            .design-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .design-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+        <div class="container header-container">
+            <a href="#" class="logo">Pro<span>Serve</span></a>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="web.html">Web Development</a></li>
+                    <li><a href="writer.html">Content Writer</a></li>
+                    <li><a href="graphic.html">Graphics</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Design Hero Section -->
+    <section class="design-hero">
+        <div class="design-hero-content">
+            <h1>Professional Graphic Design Services</h1>
+            <p>Stunning visual solutions that elevate your brand and captivate your audience</p>
+            <a href="#pricing" class="btn btn-accent">View Our Packages</a>
+        </div>
+    </section>
+
+    <!-- Design Services Section -->
+    <section class="design-services">
+        <div class="container">
+            <h2 class="section-title">Our Graphic Design Services</h2>
+            <div class="service-types">
+                <div class="service-type">
+                    <h3><i class="fas fa-palette" style="margin-right: 10px;"></i> Brand Identity</h3>
+                    <p>Comprehensive branding solutions to establish your visual identity.</p>
+                    <ul>
+                        <li>Logo design</li>
+                        <li>Brand guidelines</li>
+                        <li>Color palette development</li>
+                        <li>Typography system</li>
+                        <li>Brand collateral</li>
+                    </ul>
+                </div>
+                
+                <div class="service-type">
+                    <h3><i class="fas fa-print" style="margin-right: 10px;"></i> Print Design</h3>
+                    <p>High-quality print materials that make a lasting impression.</p>
+                    <ul>
+                        <li>Business cards</li>
+                        <li>Brochures & flyers</li>
+                        <li>Posters & banners</li>
+                        <li>Packaging design</li>
+                        <li>Stationery sets</li>
+                    </ul>
+                </div>
+                
+                <div class="service-type">
+                    <h3><i class="fas fa-ad" style="margin-right: 10px;"></i> Marketing Materials</h3>
+                    <p>Eye-catching designs that boost your marketing efforts.</p>
+                    <ul>
+                        <li>Social media graphics</li>
+                        <li>Email templates</li>
+                        <li>Digital ads</li>
+                        <li>Presentation decks</li>
+                        <li>Infographics</li>
+                    </ul>
+                </div>
+                
+                <div class="service-type">
+                    <h3><i class="fas fa-tshirt" style="margin-right: 10px;"></i> Merchandise Design</h3>
+                    <p>Creative designs for promotional products and apparel.</p>
+                    <ul>
+                        <li>T-shirt & apparel design</li>
+                        <li>Mugs & drinkware</li>
+                        <li>Bags & totes</li>
+                        <li>Promotional items</li>
+                        <li>Product mockups</li>
+                    </ul>
+                </div>
+                
+                <div class="service-type">
+                    <h3><i class="fas fa-book-open" style="margin-right: 10px;"></i> Publication Design</h3>
+                    <p>Beautiful layouts for books, magazines, and catalogs.</p>
+                    <ul>
+                        <li>Book covers & interiors</li>
+                        <li>Magazine layouts</li>
+                        <li>Catalogs & lookbooks</li>
+                        <li>Annual reports</li>
+                        <li>Editorial design</li>
+                    </ul>
+                </div>
+                
+                <div class="service-type">
+                    <h3><i class="fas fa-icons" style="margin-right: 10px;"></i> Illustration</h3>
+                    <p>Custom illustrations that bring your ideas to life.</p>
+                    <ul>
+                        <li>Custom illustrations</li>
+                        <li>Digital artwork</li>
+                        <li>Character design</li>
+                        <li>Icon sets</li>
+                        <li>Vector graphics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Tools Section -->
+    <section class="design-tools">
+        <div class="container">
+            <h2 class="section-title">Our Design Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon adobe">
+                        <i class="fab fa-adobe"></i>
+                    </div>
+                    <h3>Adobe Creative Suite</h3>
+                    <p>Industry-standard tools for professional graphic design and illustration.</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon illustrator">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Illustrator</h3>
+                    <p>Vector graphics software for logos, icons, and scalable artwork.</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon photoshop">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <h3>Photoshop</h3>
+                    <p>Advanced image editing and digital painting software.</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon indesign">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>InDesign</h3>
+                    <p>Professional layout and typesetting for print and digital publishing.</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon figma">
+                        <i class="fab fa-figma"></i>
+                    </div>
+                    <h3>Figma</h3>
+                    <p>Collaborative interface design tool for modern digital products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Process Section -->
+    <section class="design-process">
+        <div class="container">
+            <h2 class="section-title">Our Design Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We learn about your business, goals, and design requirements through detailed consultation.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Research</h3>
+                    <p>We analyze your industry, competitors, and target audience to inform our design direction.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Concept Development</h3>
+                    <p>Our designers create initial concepts and present them for your feedback.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Refinement</h3>
+                    <p>We refine the selected concept based on your feedback to perfect the design.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Delivery</h3>
+                    <p>We provide final files in all required formats along with usage guidelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Showcase -->
+    <section class="portfolio-showcase">
+        <div class="container">
+            <h2 class="section-title">Our Design Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Brand Identity Project">
+                    <div class="portfolio-overlay">
+                        <h3>NovaTech Branding</h3>
+                        <p>Complete brand identity for tech startup</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1545231027-637d2f6210f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Packaging Design">
+                    <div class="portfolio-overlay">
+                        <h3>Organic Skincare Packaging</h3>
+                        <p>Eco-friendly packaging design</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Poster Design">
+                    <div class="portfolio-overlay">
+                        <h3>Music Festival Posters</h3>
+                        <p>Series of event promotional materials</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Book Design">
+                    <div class="portfolio-overlay">
+                        <h3>Cookbook Design</h3>
+                        <p>Layout and illustration for culinary book</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Merchandise Design">
+                    <div class="portfolio-overlay">
+                        <h3>Apparel Collection</h3>
+                        <p>T-shirt designs for streetwear brand</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Digital Design">
+                    <div class="portfolio-overlay">
+                        <h3>Mobile App Interface</h3>
+                        <p>UI/UX design for fitness application</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Design Services</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div>
+                        <h3>Award-Winning Designers</h3>
+                        <p>Our team includes industry-recognized designers with proven track records.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <h3>Creative Excellence</h3>
+                        <p>We deliver innovative, original designs that stand out from competitors.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h3>Fast Turnaround</h3>
+                        <p>Efficient processes ensure we deliver quality work on schedule.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Unlimited Revisions</h3>
+                        <p>We refine until you're completely satisfied with the results.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-file-download"></i>
+                    </div>
+                    <div>
+                        <h3>All File Formats</h3>
+                        <p>Receive your designs in all necessary formats for various applications.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h3>Collaborative Process</h3>
+                        <p>We work closely with you throughout the entire design journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Our Design Packages</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Basic Design</h3>
+                    <div class="price">$499 <span>project</span></div>
+                    <ul class="pricing-features">
+                        <li>1-2 design concepts</li>
+                        <li>2 revision rounds</li>
+                        <li>Standard file formats</li>
+                        <li>5 business day turnaround</li>
+                        <li>Single deliverable</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn">Get Started</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Popular</div>
+                    <h3>Professional Design</h3>
+                    <div class="price">$1,299 <span>project</span></div>
+                    <ul class="pricing-features">
+                        <li>3-5 design concepts</li>
+                        <li>Unlimited revisions</li>
+                        <li>All file formats</li>
+                        <li>Source files included</li>
+                        <li>7-10 business days</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-accent">Get Started</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Brand Identity</h3>
+                    <div class="price">$2,999+ <span>package</span></div>
+                    <ul class="pricing-features">
+                        <li>Complete brand system</li>
+                        <li>Logo + variations</li>
+                        <li>Brand guidelines</li>
+                        <li>Color palette & typography</li>
+                        <li>Stationery set</li>
+                        <li>Dedicated designer</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="design-cta">
+        <div class="container">
+            <h2>Ready to Elevate Your Visual Identity?</h2>
+            <p>Our design team is ready to create stunning visuals that represent your brand perfectly. Contact us today to discuss your project and get a free consultation.</p>
+            <a href="index.html#contact" class="btn btn-accent">Start Your Design Project</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>ProServe Web</h3>
+                    <p>Providing premium web design and development services to help businesses succeed online.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">E-Commerce</a></li>
+                        <li><a href="#">WordPress</a></li>
+                        <li><a href="#">React/Vue Apps</a></li>
+                        <li><a href="#">SEO Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Tech Park, Suite 456</p>
+                    <p style="margin-left: 23px;">San Francisco, CA 94107</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> web@proserve.com</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> (555) 987-6543</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 ProServe Web Solutions. All Rights Reserved. | <a href="#" style="color: var(--gray-medium);">Privacy Policy</a> | <a href="#" style="color: var(--gray-medium);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const nav = document.getElementById('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design & Development Services | ProServe Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Color Variables */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --white: #ffffff;
+            --gray-light: #f5f7fa;
+            --gray-medium: #bdc3c7;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--gray-light);
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background: #c0392b;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        /* Hero Section */
+        .web-hero {
+            height: 70vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), 
+                        url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .web-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .web-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .web-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Services Section */
+        .web-services {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .service-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .service-type {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-type:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-type h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .service-type ul {
+            margin: 15px 0 20px;
+            padding-left: 20px;
+        }
+        
+        .service-type li {
+            margin-bottom: 8px;
+            list-style-type: disc;
+            color: var(--primary);
+        }
+        
+        /* Tech Stack Section */
+        .tech-stack {
+            padding: 80px 0;
+            background: var(--gray-light);
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .tech-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .react { color: #61dafb; }
+        .vue { color: #42b983; }
+        .node { color: #68a063; }
+        .magento { color: #f46f25; }
+        .wordpress { color: #21759b; }
+        
+        /* Process Section */
+        .development-process {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            padding: 30px;
+            background: var(--light);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: scale(1.05);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+        
+        /* Benefits Section */
+        .why-choose {
+            padding: 80px 0;
+            background: var(--gray-light);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            display: flex;
+            gap: 20px;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .benefit-card:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+        
+        .benefit-card:hover .benefit-icon {
+            color: var(--white);
+        }
+        
+        .benefit-icon {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-top: 5px;
+            flex-shrink: 0;
+            transition: color 0.3s ease;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .pricing-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--secondary);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            width: 120px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin: 20px 0;
+            font-weight: 700;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: var(--dark);
+            font-weight: normal;
+        }
+        
+        .pricing-features {
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--success);
+            margin-right: 10px;
+        }
+        
+        /* CTA Section */
+        .web-cta {
+            padding: 80px 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .web-cta::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .web-cta::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .web-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .web-cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 0 20px;
+            position: relative;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+            margin-top: 10px;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--gray-medium);
+            transition: color 0.3s;
+            display: inline-block;
+            padding: 3px 0;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-medium);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .web-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background: var(--white);
+                flex-direction: column;
+                padding: 30px;
+                transition: all 0.3s ease;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0 0 20px 0;
+            }
+            
+            nav ul li a {
+                font-size: 1.1rem;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .web-hero {
+                height: 60vh;
+            }
+            
+            .web-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .process-step {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .web-hero {
+                height: 70vh;
+                padding-top: 70px;
+            }
+            
+            .web-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .web-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+        <div class="container header-container">
+            <a href="#" class="logo">Pro<span>Serve</span></a>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="web.html">Web Development</a></li>
+                    <li><a href="writer.html">Content Writer</a></li>
+                    <li><a href="graphic.html">Graphics</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Web Hero Section -->
+    <section class="web-hero">
+        <div class="web-hero-content">
+            <h1>Professional Web Design & Development</h1>
+            <p>Custom web solutions built with modern technologies to help your business thrive online</p>
+            <a href="#pricing" class="btn btn-accent">View Our Packages</a>
+        </div>
+    </section>
+
+    <!-- Web Services Section -->
+    <section class="web-services">
+        <div class="container">
+            <h2 class="section-title">Our Web Development Services</h2>
+            <div class="service-types">
+                <div class="service-type">
+                    <h3><i class="fas fa-laptop-code" style="margin-right: 10px;"></i> Custom Web Development</h3>
+                    <p>Tailored web solutions designed to meet your specific business requirements.</p>
+                    <ul>
+                        <li>Responsive web design</li>
+                        <li>Custom web applications</li>
+                        <li>API development</li>
+                        <li>Database integration</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="service-type">
+                    <h3><i class="fas fa-store" style="margin-right: 10px;"></i> E-Commerce Solutions</h3>
+                    <p>Powerful online stores that drive sales and enhance customer experience.</p>
+                    <ul>
+                        <li>Magento development</li>
+                        <li>WooCommerce solutions</li>
+                        <li>Payment gateway integration</li>
+                        <li>Inventory management</li>
+                        <li>Secure checkout systems</li>
+                    </ul>
+                </div>
+                
+                <div class="service-type">
+                    <h3><i class="fas fa-mobile-alt" style="margin-right: 10px;"></i> Frontend Development</h3>
+                    <p>Beautiful, interactive user interfaces built with modern frameworks.</p>
+                    <ul>
+                        <li>React.js development</li>
+                        <li>Vue.js development</li>
+                        <li>Single Page Applications</li>
+                        <li>Progressive Web Apps</li>
+                        <li>UI/UX design</li>
+                    </ul>
+                </div>
+                
+                <div class="service-type">
+                    <h3><i class="fas fa-server" style="margin-right: 10px;"></i> Backend Development</h3>
+                    <p>Robust server-side solutions to power your web applications.</p>
+                    <ul>
+                        <li>Node.js development</li>
+                        <li>API development</li>
+                        <li>Database architecture</li>
+                        <li>Server configuration</li>
+                        <li>Cloud integration</li>
+                    </ul>
+                </div>
+                
+                <div class="service-type">
+                    <h3><i class="fab fa-wordpress" style="margin-right: 10px;"></i> WordPress Development</h3>
+                    <p>Custom WordPress solutions for blogs, business sites, and more.</p>
+                    <ul>
+                        <li>Custom theme development</li>
+                        <li>Plugin development</li>
+                        <li>Headless WordPress</li>
+                        <li>Performance optimization</li>
+                        <li>Security hardening</li>
+                    </ul>
+                </div>
+                
+                <div class="service-type">
+                    <h3><i class="fas fa-search-dollar" style="margin-right: 10px;"></i> SEO & Maintenance</h3>
+                    <p>Keep your website performing at its best and ranking high.</p>
+                    <ul>
+                        <li>SEO optimization</li>
+                        <li>Performance audits</li>
+                        <li>Security updates</li>
+                        <li>Content updates</li>
+                        <li>Ongoing maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2 class="section-title">Our Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon react">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React.js</h3>
+                    <p>Building dynamic, high-performance user interfaces with the most popular JavaScript library.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon vue">
+                        <i class="fab fa-vuejs"></i>
+                    </div>
+                    <h3>Vue.js</h3>
+                    <p>Creating elegant, approachable, and versatile web interfaces with this progressive framework.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon node">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3>Node.js</h3>
+                    <p>Developing scalable, efficient backend services with JavaScript on the server.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon magento">
+                        <i class="fab fa-magento"></i>
+                    </div>
+                    <h3>Magento</h3>
+                    <p>Powerful e-commerce solutions with one of the most robust platforms available.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon wordpress">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3>WordPress</h3>
+                    <p>Flexible CMS solutions for blogs, business sites, and e-commerce stores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process Section -->
+    <section class="development-process">
+        <div class="container">
+            <h2 class="section-title">Our Development Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We analyze your requirements, goals, and target audience to create a strategic plan.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Our designers create wireframes and mockups to visualize your future website.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Development</h3>
+                    <p>Our developers bring the design to life with clean, efficient code.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Testing</h3>
+                    <p>We rigorously test all functionality across devices and browsers.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Launch</h3>
+                    <p>We deploy your website and provide training and documentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Web Services</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div>
+                        <h3>Expert Developers</h3>
+                        <p>Our team consists of certified professionals with 5+ years of experience in web technologies.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                    <div>
+                        <h3>Responsive Design</h3>
+                        <p>All our websites are fully responsive and optimized for all devices and screen sizes.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Security Focused</h3>
+                        <p>We implement industry-standard security practices to protect your website and data.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div>
+                        <h3>Performance Optimized</h3>
+                        <p>Fast-loading websites with optimized code and assets for better user experience and SEO.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div>
+                        <h3>SEO Ready</h3>
+                        <p>Our websites are built with SEO best practices to help you rank higher in search results.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h3>Ongoing Support</h3>
+                        <p>We provide maintenance and support packages to keep your website running smoothly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Our Web Development Packages</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Basic Website</h3>
+                    <div class="price">$1,499 <span>one-time</span></div>
+                    <ul class="pricing-features">
+                        <li>5-10 custom designed pages</li>
+                        <li>Mobile responsive design</li>
+                        <li>Basic SEO setup</li>
+                        <li>Contact form</li>
+                        <li>1-2 week turnaround</li>
+                        <li>1 month support</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn">Get Started</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Popular</div>
+                    <h3>Business Website</h3>
+                    <div class="price">$3,999 <span>one-time</span></div>
+                    <ul class="pricing-features">
+                        <li>10-20 custom designed pages</li>
+                        <li>CMS integration</li>
+                        <li>Advanced SEO setup</li>
+                        <li>Custom forms</li>
+                        <li>Basic analytics</li>
+                        <li>2-3 week turnaround</li>
+                        <li>3 months support</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-accent">Get Started</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>E-Commerce Website</h3>
+                    <div class="price">$6,999+ <span>one-time</span></div>
+                    <ul class="pricing-features">
+                        <li>Custom online store</li>
+                        <li>Product management</li>
+                        <li>Payment gateway integration</li>
+                        <li>Inventory system</li>
+                        <li>Advanced security</li>
+                        <li>4-6 week turnaround</li>
+                        <li>6 months support</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="web-cta">
+        <div class="container">
+            <h2>Ready to Build Your Dream Website?</h2>
+            <p>Our team of web development experts is ready to bring your vision to life. Contact us today to discuss your project and get a free consultation.</p>
+            <a href="index.html#contact" class="btn btn-accent">Start Your Project</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>ProServe Web</h3>
+                    <p>Providing premium web design and development services to help businesses succeed online.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">E-Commerce</a></li>
+                        <li><a href="#">WordPress</a></li>
+                        <li><a href="#">React/Vue Apps</a></li>
+                        <li><a href="#">SEO Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Tech Park, Suite 456</p>
+                    <p style="margin-left: 23px;">San Francisco, CA 94107</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> web@proserve.com</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> (555) 987-6543</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 ProServe Web Solutions. All Rights Reserved. | <a href="#" style="color: var(--gray-medium);">Privacy Policy</a> | <a href="#" style="color: var(--gray-medium);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const nav = document.getElementById('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
